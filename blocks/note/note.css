@@ -24,12 +24,16 @@
     line-height: 1.5em;
 }
 
+.note p {
+    margin:0;
+}
+
 .icon.icon-note{
     position: relative;
     margin-left:10px;
     top:6px;
     right:10px;
-    margin-bottom:20px;
+    margin-bottom:17px;
 }
 
 .icon.icon-bulb{
@@ -37,5 +41,5 @@
     margin-left:10px;
     top:6px;
     right:10px;
-    margin-bottom:20px;
+    margin-bottom:17px;
 }
