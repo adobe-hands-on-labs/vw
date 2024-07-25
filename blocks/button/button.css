@@ -1,4 +1,4 @@
-/* .button {
+.button a{
     display: inline-block;
     box-sizing: border-box;
     text-decoration: none;
@@ -21,11 +21,7 @@
     height: auto;
 }
 
-.button-container{
-    
-}
-
-.button p{
+.button-container p{
     margin:0;
 }
 
@@ -47,9 +43,9 @@ button:disabled:hover {
   cursor: unset;
 }
 
-a.button.secondary,
+a.button-container.secondary,
 button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
-} */
+}

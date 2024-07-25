@@ -27,9 +27,7 @@ export default function decorate($block) {
   const $a = $block.querySelector('a');
   const videoURL = $a.href;
   const observer = new IntersectionObserver((entries) => {
-    console.log(entries);
     entries.forEach((entry) => {
-      console.log(entry);
       if (entry.isIntersecting) {
         decorateVideoBlock($block, videoURL);
       }
