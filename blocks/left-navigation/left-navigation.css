@@ -1,0 +1,124 @@
+.left-navigation-wrapper{
+    flex:3;
+    min-width: 400px;
+    max-width: 458px;
+    width: auto;
+}
+
+.left-navigation{
+  position: sticky;
+  margin-left:30px;
+  top:140px;
+  overflow-y: auto;
+  padding-right:40px;
+  overflow-x:hidden;
+  height: 86vh;
+}
+
+.left-navigation p, .left-navigation li, .left-navigation li a{
+  color: rgb(75, 75, 75);
+  cursor: pointer;
+  display: block;
+  float: none;
+  font-family: "adobe-clean", sans-serif;
+  font-size: 1em;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+}
+
+.left-navigation li a{
+    max-width: 250px;
+    width:100%;
+}
+
+.left-navigation li a:hover, .left-navigation p:hover{
+    background-color: rgb(232, 232, 232);
+    box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
+}
+
+.left-navigation p:hover{
+  /* width: 90%; */
+}
+
+@media only screen and (max-width: 900px){
+    .left-navigation-wrapper{
+        min-width: 270px;
+    }
+
+    .left-navigation{
+        padding-right:0px;
+    }
+
+  .four-split-image > div > div {
+    width: 20%;
+    display: inline-block;
+    margin: 2px;
+  }
+
+  .four-split-image > div, .four-split-image > div {
+    display: inline-block !important;
+  }
+
+  .two-split-image > div > div {
+    width: 45%;
+    display: inline-block;
+    margin: 2px;
+  }
+
+  .container-wrapper > .container.w-1, .container-wrapper > .container.w-2, .container-wrapper > .container.w-3 {
+    width: 70%;
+  }
+
+  .container-wrapper > .container.w-4, .container-wrapper > .container.w-5, .container-wrapper > .container.w-6,
+  .container-wrapper > .container.w-7, .container-wrapper > .container.w-8, .container-wrapper > .container.w-9,
+  .container-wrapper > .container.w-10, .container-wrapper > .container.w-11, .container-wrapper > .container.w-12 {
+    width: 100%;
+  }
+
+  .left-navigation-wrapper {
+    min-width: 320px;
+    max-width: 400px;
+  }
+
+  .left-navigation-wrapper>.left-navigation>div {
+    max-width: 250px;
+  }
+
+}
+
+.left-navigation li .active{
+  background-color: rgb(232, 232, 232);
+  box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
+}
+
+.left-navigation img{
+  position: relative;
+  top:6px;
+  right:23px;
+}
+
+.left-navigation p{
+  position: relative;
+  padding-left: 0px;
+  left: 18px;
+}
+
+.planning li,.produce li,.deliver li,.analyze li{
+  position: relative;
+  /* left: 0px; */
+}
+
+.planning ul,.produce ul,.deliver ul,.analyze ul{
+  display: none;
+  transition: display 0.3s ease;
+}
+
+.left-navigation > div > ul {
+  padding-left: 0;
+  margin-left:20px;
+}

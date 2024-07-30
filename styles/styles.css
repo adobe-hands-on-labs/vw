@@ -191,26 +191,22 @@ main img {
   width: 100%;
 }
 
+main{
+  display: flex;
+}
+
 /* sections */
 main .section {
   padding: 64px 16px;
+  padding-left:8px;
+  min-height:80vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (width >= 600px) {
   main .section {
     padding: 64px 32px;
   }
-}
-
-@media (width >= 900px) {
-  .section > div {
-    max-width: 1200px;
-    margin: auto;
-  }
-}
-
-/* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
 }

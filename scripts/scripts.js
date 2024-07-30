@@ -12,6 +12,8 @@ import {
   loadSections,
   loadCSS,
   sampleRUM,
+  decorateBlock,
+  loadBlock
 } from './aem.js';
 
 /**
@@ -27,6 +29,23 @@ function buildHeroBlock(main) {
     section.append(buildBlock('hero', { elems: [picture, h1] }));
     main.prepend(section);
   }
+}
+
+export function createTag(tag, attributes, html) {
+  const el = document.createElement(tag);
+  if (html) {
+    if (html instanceof HTMLElement || html instanceof SVGElement) {
+      el.append(html);
+    } else {
+      el.insertAdjacentHTML('beforeend', html);
+    }
+  }
+  if (attributes) {
+    Object.entries(attributes).forEach(([key, val]) => {
+      el.setAttribute(key, val);
+    });
+  }
+  return el;
 }
 
 /**
@@ -78,6 +97,10 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    // below code is to exclude prepareLeftNav method if page is under tools
+    if (!window.location.href.includes('/tools/')) {
+      prepareLeftNav(main);
+    }
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
@@ -89,6 +112,12 @@ async function loadEager(doc) {
     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
       loadFonts();
     }
+
+    // below code is to exclude setUpLeftNav method if page is under tools
+    if (!window.location.href.includes('/tools/')) {
+      setUpLeftNav(main, main.querySelector('aside'));
+    }
+
   } catch (e) {
     // do nothing
   }
@@ -127,6 +156,20 @@ async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+}
+
+export function setUpLeftNav(main, aside) {
+  const leftNav = buildBlock('left-navigation', '');
+  aside.append(leftNav);
+  main.insertBefore(aside, main.querySelector('.section'));
+  console.log(leftNav);
+  decorateBlock(leftNav);
+  return loadBlock(leftNav);
+}
+
+function prepareLeftNav(main) {
+  const aside = createTag('aside');
+  main.insertBefore(aside, main.querySelector('.section'));
 }
 
 loadPage();

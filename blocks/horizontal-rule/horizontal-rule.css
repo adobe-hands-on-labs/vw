@@ -1,0 +1,9 @@
+.horizontal-rule {
+    border: none;
+    border-top: 2px solid rgba(136, 136, 136, 0.5); /* Example: 2px solid black line */
+    margin: 30px 0; /* Example: 20px margin on top and bottom */
+}
+
+.without-rule{
+    border:none;
+}
