@@ -124,6 +124,7 @@
 @media (max-width: 900px) {
   .left-navigation-wrapper {
     min-width: 0;
+    width: 0;
   }
   .left-navigation-wrapper.overlay {
     position: fixed;
@@ -137,5 +138,6 @@
     overflow: initial;
     display: block;
     background: white;
+    transition: 0.5s;
   }
 }
