@@ -22,7 +22,8 @@
   /* fonts */
   --body-font-family: adobe-clean, adobe-clean-fallback;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Adobe Clean', menlo, consolas, 'Liberation Mono', monospace;
+  --fixed-font-family: "Adobe Clean", menlo, consolas, "Liberation Mono",
+    monospace;
 
   /* body sizes */
   --body-font-size-m: 16px;
@@ -45,7 +46,7 @@
   font-family: adobe-clean-fallback;
   size-adjust: 100.06%;
   ascent-override: 95%;
-  src: local('sans-serif');
+  src: local("sans-serif");
 }
 
 @media (width >= 900px) {
@@ -91,12 +92,24 @@ h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
 code,
 pre {
@@ -118,6 +131,22 @@ main pre {
   border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
+}
+
+code,
+pre,
+samp {
+  font-family: var(--fixed-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+code,
+samp {
+  padding: 0.125em;
+}
+
+pre {
+  overflow: scroll;
 }
 
 /* links */
@@ -191,15 +220,15 @@ main img {
   width: 100%;
 }
 
-main{
+main {
   display: flex;
 }
 
 /* sections */
 main .section {
   padding: 64px 16px;
-  padding-left:8px;
-  min-height:80vh;
+  padding-left: 8px;
+  min-height: 80vh;
   width: 60vw;
   display: flex;
   flex-direction: column;

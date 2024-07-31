@@ -1,5 +1,5 @@
-.note {
-  background-color: #d9edf7;
+.tip {
+  background-color: #ffeddf;
   color: #323232;
   border-color: #a8d4eb;
   border-style: solid;
@@ -11,11 +11,7 @@
   line-height: 1.5em;
 }
 
-.note p {
-  margin: 0;
-}
-
-.icon.icon-note {
+.icon.icon-bulb {
   position: relative;
   margin-left: 10px;
   top: 6px;
