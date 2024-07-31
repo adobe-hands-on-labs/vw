@@ -59,6 +59,12 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  
+
+  const leftNav = document.getElementsByClassName("left-navigation-wrapper")[0];
+  (expanded == false) ? leftNav.classList.add("overlay") : leftNav.classList.remove("overlay");
+
+
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
   if (isDesktop.matches) {
@@ -128,6 +134,7 @@ export default async function decorate(block) {
     hamburger.classList.add('nav-hamburger');
     hamburger.innerHTML = `
        <span class="icon icon-hamburger">
+       <img data-icon-name="hamburger" src="/icons/hamburger-dark.svg" alt="" loading="lazy">
        </span>
       `;
     hamburger.addEventListener('click', () => toggleMenu(nav, navSections));

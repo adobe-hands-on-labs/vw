@@ -19,14 +19,14 @@ header nav {
   font-family: var(--body-font-family);
 }
 
-header nav[aria-expanded="true"] {
+/* header nav[aria-expanded="true"] {
   grid-template:
     'hamburger brand' var(--nav-height)
     'sections sections' 1fr
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100vh;
-}
+} */
 
 @media (min-width: 600px) {
   header nav {
@@ -61,6 +61,7 @@ header nav .nav-hamburger {
   height: 22px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 header nav .nav-hamburger button {
@@ -139,8 +140,9 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
+  position: relative;
 }
 
 header nav .nav-brand img {
@@ -268,10 +270,14 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 #nav {
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(255, 255, 255);
   color: rgb(75, 75, 75);
   font-family: "adobe-clean", sans-serif;
   font-size: 16px;
@@ -279,13 +285,14 @@ header nav .nav-tools {
   line-height: 24px;
   width: 100%;
   margin: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,.15);
 }
 
 .nav-brand{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-family: "adobe-clean", sans-serif;
   height: 100%;
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: 700;
   line-height: 48px;
   flex-basis: 1800px;
@@ -315,6 +322,10 @@ header nav .nav-tools {
     display:none
   }
   .nav-brand{
-    display: none;
+    top: 16px;
+    font-size: 16px;
+  }
+  .nav-tools {
+    top: 16px;
   }
 }

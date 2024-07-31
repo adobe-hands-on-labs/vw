@@ -42,3 +42,19 @@
   height: auto;
   object-fit: cover;
 }
+
+
+@media (max-width: 900px) {
+  .width-10percent,
+  .width-20percent,
+  .width-30percent,
+  .width-40percent,
+  .width-50percent,
+  .width-60percent,
+  .width-70percent,
+  .width-80percent,
+  .width-90percent,
+  .width-100percent {
+    width: 100%;
+  }
+}

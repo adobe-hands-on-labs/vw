@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --link-color: #035fe6;
+  --link-color: #000000;
   --link-hover-color: #136ff6;
   --background-color: white;
   --light-color: #eee;
@@ -20,9 +20,9 @@
   --text-color: black;
 
   /* fonts */
-  --body-font-family: adobe-clean, adobe-clean-fallback;
+  --body-font-family: adobe-clean, adobe-clean-fallback, arial, helvetica;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: "Adobe Clean", menlo, consolas, "Liberation Mono",
+  --fixed-font-family: adobe-clean, "Adobe Clean", menlo, consolas, "Liberation Mono",
     monospace;
 
   /* body sizes */
@@ -152,7 +152,7 @@ pre {
 /* links */
 a:any-link {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -229,7 +229,7 @@ main .section {
   padding: 64px 16px;
   padding-left: 8px;
   min-height: 80vh;
-  width: 60vw;
+  width: 65vw;
   display: flex;
   flex-direction: column;
 }
@@ -239,3 +239,15 @@ main .section {
     padding: 64px 32px;
   }
 }
+
+
+@media (max-width: 900px) {
+
+  main .section {
+    width: 95vw;
+  }
+  
+}
+
+
+

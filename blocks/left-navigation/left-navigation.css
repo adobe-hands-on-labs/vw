@@ -1,8 +1,10 @@
 .left-navigation-wrapper{
     flex:3;
-    min-width: 400px;
-    max-width: 458px;
+    min-width: 350px;
+    max-width: 400px;
     width: auto;
+    background: #f8f8f8;
+    border-right: 1px solid lightgray;
 }
 
 .left-navigation{
@@ -21,7 +23,7 @@
   display: block;
   float: none;
   font-family: "adobe-clean", sans-serif;
-  font-size: 1em;
+  font-size: 16px;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -39,6 +41,7 @@
 .left-navigation li a:hover, .left-navigation p:hover{
     background-color: rgb(232, 232, 232);
     box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
+    border-radius: 5px;
 }
 
 .left-navigation p:hover{
@@ -46,9 +49,6 @@
 }
 
 @media only screen and (max-width: 900px){
-    .left-navigation-wrapper{
-        min-width: 270px;
-    }
 
     .left-navigation{
         padding-right:0px;
@@ -78,11 +78,6 @@
   .container-wrapper > .container.w-7, .container-wrapper > .container.w-8, .container-wrapper > .container.w-9,
   .container-wrapper > .container.w-10, .container-wrapper > .container.w-11, .container-wrapper > .container.w-12 {
     width: 100%;
-  }
-
-  .left-navigation-wrapper {
-    min-width: 320px;
-    max-width: 400px;
   }
 
   .left-navigation-wrapper>.left-navigation>div {
@@ -121,4 +116,26 @@
 .left-navigation > div > ul {
   padding-left: 0;
   margin-left:20px;
+}
+
+
+
+
+@media (max-width: 900px) {
+  .left-navigation-wrapper {
+    min-width: 0;
+  }
+  .left-navigation-wrapper.overlay {
+    position: fixed;
+    /* top: var(--spacing-l); */
+    left: 0;
+    z-index: 1;
+    /* width: 100%; */
+    min-width: 350px !important;
+    max-width: 400px;
+    height: 100%;
+    overflow: initial;
+    display: block;
+    background: white;
+  }
 }
