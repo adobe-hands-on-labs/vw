@@ -151,3 +151,18 @@ export default async function decorate(block) {
     block.append(navWrapper);
   }
 }
+
+
+// Help icon click will trigger mailto:hol@adobe.com
+setTimeout(function(){
+  document.getElementsByClassName("nav-tools")[0].addEventListener("click", function(){
+    console.log("icon help");
+    window.location.href = "mailto:hol@adobe.com";
+  });
+},1000);
+
+
+
+
+
+

@@ -275,6 +275,9 @@ header nav .nav-tools {
   align-items: center;
   position: relative;
 }
+header nav .nav-tools .icon-help {
+  cursor: pointer;
+}
 
 #nav {
   background-color: rgb(255, 255, 255);
