@@ -103,12 +103,12 @@
   left: 18px;
 }
 
-.planning li,.produce li,.deliver li,.analyze li{
+.nav-heading li,.nav-heading li,.nav-heading li,.nav-heading li{
   position: relative;
   /* left: 0px; */
 }
 
-.planning ul,.produce ul,.deliver ul,.analyze ul{
+.nav-heading ul,.nav-heading ul,.nav-heading ul,.nav-heading ul{
   display: none;
   transition: display 0.3s ease;
 }

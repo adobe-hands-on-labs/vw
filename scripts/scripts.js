@@ -162,7 +162,6 @@ export function setUpLeftNav(main, aside) {
   const leftNav = buildBlock('left-navigation', '');
   aside.append(leftNav);
   main.insertBefore(aside, main.querySelector('.section'));
-  console.log(leftNav);
   decorateBlock(leftNav);
   return loadBlock(leftNav);
 }

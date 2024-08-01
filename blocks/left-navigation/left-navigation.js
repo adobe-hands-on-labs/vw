@@ -31,7 +31,7 @@ function loadActiveLinks(){
   });
 
   // Find the parent container of the active link and show its dropdown
-  var activeContainer = document.querySelector(".active").closest(".planning, .produce, .deliver, .analyze");
+  var activeContainer = document.querySelector(".active")?.closest(".nav-heading");
   if (activeContainer) {
     const activeParagraph = activeContainer.querySelector(".left-navigation p");
     activeParagraph.querySelector('img').src = "/icons/caret-down.svg";
@@ -47,7 +47,6 @@ export default async function decorate(block) {
   const leftNavMeta = getMetadata('left-nav');
   const leftNavPath = leftNavMeta ? new URL(leftNavMeta).pathname : '/left-nav';
   const resp = await fetch(`${leftNavPath}.plain.html`);
-  console.log(resp);
   if (resp.ok) {
       const html = await resp.text();
       block.innerHTML = html;
