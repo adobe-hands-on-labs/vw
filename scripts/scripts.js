@@ -191,6 +191,7 @@ modal.innerHTML =  '<div class="modal-content">'+
   '</div>';
 document.body.appendChild(modal);
 
+
 // When the user clicks on feedback icon
 var feedback = document.getElementsByClassName("myImageDiv")[0];
 feedback.onclick = function() {
