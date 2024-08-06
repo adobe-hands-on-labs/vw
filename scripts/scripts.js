@@ -172,3 +172,51 @@ function prepareLeftNav(main) {
 }
 
 loadPage();
+
+
+// ** Modal Script - Start **
+const newElement = document.createElement('div');
+newElement.classList.add("myImageDiv");
+newElement.innerHTML = '<img class="modal-img" src="/icons/feedback.png" />';
+document.body.appendChild(newElement);
+
+let modalContentUrl = "https://main--event--adobehols.aem.live/developer/forms/question-submission-page";
+
+// Get the modal
+var modal = document.createElement("div");
+modal.classList.add("modal");
+modal.innerHTML =  '<div class="modal-content">'+
+    '<span class="close">&times;</span>'+
+    '<iframe src="'+modalContentUrl+'" width="100%" height="600" style="border:none;border-radius:10px;"></iframe>'+
+  '</div>';
+document.body.appendChild(modal);
+
+// When the user clicks on feedback icon
+var feedback = document.getElementsByClassName("myImageDiv")[0];
+feedback.onclick = function() {
+  modal.style.display = "block";
+}
+
+
+// Get the <span> element that closes the modal
+var close = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+close.onclick = function() {
+    modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+}
+// ** Modal Script - End **
+
+
+
+
+
+
+
+
+
