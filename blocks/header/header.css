@@ -49,6 +49,9 @@ header nav {
 header nav p {
   margin: 0;
   line-height: 1;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
 }
 
 header nav a:any-link {

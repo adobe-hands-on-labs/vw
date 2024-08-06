@@ -34,13 +34,12 @@
 }
 
 .left-navigation li a{
-    max-width: 250px;
     width:100%;
+    color: #4b5563;
 }
 
 .left-navigation li a:hover, .left-navigation p:hover{
     background-color: rgb(232, 232, 232);
-    box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
     border-radius: 5px;
 }
 
@@ -87,8 +86,9 @@
 }
 
 .left-navigation li .active{
-  background-color: rgb(232, 232, 232);
-  box-shadow: rgb(140, 144, 140) 0px 0px 3px 0px;
+  background-color: #e0eefc;
+  color: #2166ae;
+  border-radius: 5px;
 }
 
 .left-navigation img{

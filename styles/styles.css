@@ -234,6 +234,23 @@ main .section {
   flex-direction: column;
 }
 
+
+main>.section>div { 
+  padding: 10px 0;
+}
+
+
+
+p {
+  color:#4b5563;
+  font-weight: 400;
+}
+.title p {
+  color:#1f2937;
+  font-weight: 600;
+}
+
+
 @media (width >= 600px) {
   main .section {
     padding: 64px 32px;
