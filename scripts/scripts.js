@@ -187,13 +187,14 @@ var modal = document.createElement("div");
 modal.classList.add("modal");
 modal.innerHTML =  '<div class="modal-content">'+
     '<span class="close">&times;</span>'+
-    '<iframe src="'+modalContentUrl+'" width="100%" height="600" style="border:none;border-radius:10px;"></iframe>'+
+    '<iframe id="modalIframe" src="'+modalContentUrl+'" width="100%" height="600" style="border:none;border-radius:10px;"></iframe>'+
   '</div>';
 document.body.appendChild(modal);
 
 // When the user clicks on feedback icon
 var feedback = document.getElementsByClassName("myImageDiv")[0];
 feedback.onclick = function() {
+  document.getElementById("modalIframe").setAttribute("src", modalContentUrl);
   modal.style.display = "block";
 }
 
