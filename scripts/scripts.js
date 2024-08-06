@@ -13,7 +13,7 @@ import {
   loadCSS,
   sampleRUM,
   decorateBlock,
-  loadBlock
+  loadBlock,
 } from './aem.js';
 
 /**
@@ -46,6 +46,19 @@ export function createTag(tag, attributes, html) {
     });
   }
   return el;
+}
+
+function prepareLeftNav(main) {
+  const aside = createTag('aside');
+  main.insertBefore(aside, main.querySelector('.section'));
+}
+
+export function setUpLeftNav(main, aside) {
+  const leftNav = buildBlock('left-navigation', '');
+  aside.append(leftNav);
+  main.insertBefore(aside, main.querySelector('.section'));
+  decorateBlock(leftNav);
+  return loadBlock(leftNav);
 }
 
 /**
@@ -117,7 +130,6 @@ async function loadEager(doc) {
     if (!window.location.href.includes('/tools/')) {
       setUpLeftNav(main, main.querySelector('aside'));
     }
-
   } catch (e) {
     // do nothing
   }
@@ -158,67 +170,47 @@ async function loadPage() {
   loadDelayed();
 }
 
-export function setUpLeftNav(main, aside) {
-  const leftNav = buildBlock('left-navigation', '');
-  aside.append(leftNav);
-  main.insertBefore(aside, main.querySelector('.section'));
-  decorateBlock(leftNav);
-  return loadBlock(leftNav);
-}
-
-function prepareLeftNav(main) {
-  const aside = createTag('aside');
-  main.insertBefore(aside, main.querySelector('.section'));
-}
-
 loadPage();
 
-
-// ** Modal Script - Start **
+// // ** Modal Script - Start **
 const newElement = document.createElement('div');
-newElement.classList.add("myImageDiv");
+newElement.classList.add('myImageDiv');
 newElement.innerHTML = '<img class="modal-img" src="/icons/feedback.png" />';
 document.body.appendChild(newElement);
 
-let modalContentUrl = "https://main--event--adobehols.aem.live/developer/forms/question-submission-page";
+const modalContentUrl = 'https://main--event--adobehols.aem.live/developer/forms/question-submission-page';
 
-// Get the modal
-var modal = document.createElement("div");
-modal.classList.add("modal");
-modal.innerHTML =  '<div class="modal-content">'+
-    '<span class="close">&times;</span>'+
-    '<iframe id="modalIframe" src="'+modalContentUrl+'" width="100%" height="600" style="border:none;border-radius:10px;"></iframe>'+
-  '</div>';
-document.body.appendChild(modal);
+const feedback = document.getElementsByClassName('myImageDiv')[0];
+feedback.onclick = () => {
+  window.open(modalContentUrl, '_blank');
+};
 
+// // Get the modal
+// var modal = document.createElement("div");
+// modal.classList.add("modal");
+// modal.innerHTML =  '<div class="modal-content">'+
+//     '<span class="close">&times;</span>'+
+//     '<iframe id="modalIframe" src="'+modalContentUrl+'" width="100%" height="600" style="border:none;border-radius:10px;"></iframe>'+
+//   '</div>';
+// document.body.appendChild(modal);
 
-// When the user clicks on feedback icon
-var feedback = document.getElementsByClassName("myImageDiv")[0];
-feedback.onclick = function() {
-  document.getElementById("modalIframe").setAttribute("src", modalContentUrl);
-  modal.style.display = "block";
-}
+// // When the user clicks on feedback icon
+// var feedback = document.getElementsByClassName("myImageDiv")[0];
+// feedback.onclick = function() {
+//   document.getElementById("modalIframe").setAttribute("src", modalContentUrl);
+//   modal.style.display = "block";
+// }
 
-
-// Get the <span> element that closes the modal
-var close = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
-close.onclick = function() {
-    modal.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-}
-// ** Modal Script - End **
-
-
-
-
-
-
-
-
-
+// // Get the <span> element that closes the modal
+// var close = document.getElementsByClassName("close")[0];
+// // When the user clicks on <span> (x), close the modal
+// close.onclick = function() {
+//     modal.style.display = "none";
+// }
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//       modal.style.display = "none";
+//     }
+// }
+// // ** Modal Script - End **
