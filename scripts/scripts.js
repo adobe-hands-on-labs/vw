@@ -178,7 +178,7 @@ newElement.classList.add('myImageDiv');
 newElement.innerHTML = '<img class="modal-img" src="/icons/feedback.png" />';
 document.body.appendChild(newElement);
 
-const modalContentUrl = 'https://main--event--adobehols.aem.live/developer/forms/question-submission-page';
+const modalContentUrl = 'https://forms.office.com/r/F76M38mRkV';
 
 const feedback = document.getElementsByClassName('myImageDiv')[0];
 feedback.onclick = () => {
