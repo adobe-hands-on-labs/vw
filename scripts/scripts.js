@@ -173,17 +173,17 @@ async function loadPage() {
 loadPage();
 
 // // ** Modal Script - Start **
-const newElement = document.createElement('div');
-newElement.classList.add('myImageDiv');
-newElement.innerHTML = '<img class="modal-img" src="/icons/feedback.png" />';
-document.body.appendChild(newElement);
+// const newElement = document.createElement('div');
+// newElement.classList.add('myImageDiv');
+// newElement.innerHTML = '<img class="modal-img" src="/icons/feedback.png" />';
+// document.body.appendChild(newElement);
 
-const modalContentUrl = 'https://forms.office.com/r/F76M38mRkV';
+// const modalContentUrl = 'https://forms.office.com/r/F76M38mRkV';
 
-const feedback = document.getElementsByClassName('myImageDiv')[0];
-feedback.onclick = () => {
-  window.open(modalContentUrl, '_blank');
-};
+// const feedback = document.getElementsByClassName('myImageDiv')[0];
+// feedback.onclick = () => {
+//   window.open(modalContentUrl, '_blank');
+// };
 
 // // Get the modal
 // var modal = document.createElement("div");
