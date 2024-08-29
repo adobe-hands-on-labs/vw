@@ -19,6 +19,78 @@
   display: block;
 }
 
+.columns.split-75-25 > div > div:first-child {
+  flex:8;
+}
+
+.columns.split-75-25 > div > div:last-child {
+  flex: 4;
+}
+
+.columns.split-75-25 .columns-img-col picture {
+  width: 100%;
+  height: auto;
+}
+
+.columns.split-75-25 .columns-img-col img {
+  width: 100%;
+  height: auto;
+}
+
+.columns.split-25-75 > div > div:first-child {
+  flex:3;
+}
+ 
+.columns.split-25-75 > div > div:last-child {
+  flex: 9;
+}
+ 
+.columns.split-25-75 .columns-img-col picture {
+  width: 100%;
+  height: auto;
+}
+ 
+.columns.split-25-75 .columns-img-col img {
+  width: 100%;
+  height: auto;
+}
+
+.columns.split-60-40 > div > div:first-child {
+  flex: 7;
+}
+
+.columns.split-60-40 > div > div:last-child {
+  flex: 5;
+}
+
+.columns.split-60-40 .columns-img-col picture {
+  width: 100%;
+  height: auto;
+}
+
+.columns.split-60-40 .columns-img-col img {
+  width: 100%;
+  height: auto;
+}
+
+.columns.split-40-60 > div > div:first-child {
+  flex: 5;
+}
+
+.columns.split-40-60 > div > div:last-child {
+  flex: 7;
+}
+
+.columns.split-40-60 .columns-img-col picture {
+  width: 100%;
+  height: auto;
+}
+
+.columns.split-40-60 .columns-img-col img {
+  width: 100%;
+  height: auto;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
